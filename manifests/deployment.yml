@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cs-b308"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cs-b308"
+  template:
+    metadata:
+      labels:
+        app: "cs-b308"
+    spec:
+      containers:
+        - name: "cs-b308"
+          image: "leechmirrord.azurecr.io/cs"
+          ports:
+          - containerPort: 80
